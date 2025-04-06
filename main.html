@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Portal</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, <span id="user-name"></span>!</h1>
+            <!-- Removed Age Display -->
+        </header>
+        <main>
+            <section>
+                <h2>Health Data</h2>
+                <form id="health-data-form">
+                    <div class="input-container">
+                        <label for="user-name-input">Name:</label>
+                        <input type="text" id="user-name-input" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="user-age-input">Age:</label>
+                        <input type="number" id="user-age-input" placeholder="Enter your age" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="blood-pressure">Blood Pressure:</label>
+                        <input type="text" id="blood-pressure" placeholder="e.g., 120" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="blood-sugar">Blood Sugar Level:</label>
+                        <input type="text" id="blood-sugar" placeholder="e.g., 90 mg/dL" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="body-temperature">Body Temperature:</label>
+                        <input type="text" id="body-temperature" placeholder="e.g., 98.6°F" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="symptom">Symptom:</label>
+                        <select id="symptom" required>
+                            <option value="" disabled selected>Select your symptom</option>
+                            <option value="fever">Fever</option>
+                            <option value="cold">Cold</option>
+                            <option value="headache">Headache</option>
+                            <option value="cough">Cough</option>
+                            <option value="stomach pain">Stomach Pain</option>
+                            <option value="body pain">Body Pain</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section id="health-advice">
+                <h2>Health Advice</h2>
+                <div id="advice-content">
+                    <!-- Backend will populate this section with advice based on health data -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</body>
+</html>
