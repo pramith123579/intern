@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
 import logging
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -189,4 +190,5 @@ def analyze_health():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000)  # Ensure the backend is accessible on localhost
+    port = int(os.environ.get('PORT', 5000))  # Use the PORT environment variable or default to 5000
+    app.run(debug=True, host='0.0.0.0', port=port)  # Bind to 0.0.0.0 to make it accessible externally
